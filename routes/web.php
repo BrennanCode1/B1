@@ -16,8 +16,8 @@ use App\Http\Controllers\ApiController;
 ///Route::get('/', [ApiController::class,'displayNews']);
 ///Route::get('/fetchNewsFromSource', [ApiController::class, 'fetchNewsFromSource'])->name('fetchNewsFromSource');
 ///Route::post('/sourceId', 'ApiController@displayNews');
-Route::get('/', 'ApiController@displayNews');
-Route::post('/sourceId', 'ApiController@displayNews');
+Route::get('/', 'App\Http\Controllers\ApiController@displayNews');
+Route::post('/sourceId', 'App\Http\Controllers\ApiController@displayNews');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
