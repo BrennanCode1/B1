@@ -3,21 +3,32 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Api;
 use App\Http\Controllers\ApiController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+
 ///Route::get('/', [ApiController::class,'displayNews']);
 ///Route::get('/fetchNewsFromSource', [ApiController::class, 'fetchNewsFromSource'])->name('fetchNewsFromSource');
 ///Route::post('/sourceId', 'ApiController@displayNews');
-Route::get('/', 'App\Http\Controllers\ApiController@displayNews');
-Route::post('/sourceId', 'App\Http\Controllers\ApiController@displayNews');
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+///Route::get('/', 'App\Http\Controllers\ApiController@displayNews');
+////Route::post('/sourceId', 'App\Http\Controllers\ApiController@displayNews');
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('dashboard', 'App\Http\Controllers\ApiController@displayNews');
+    Route::post('Api/{sourceId}', 'App\Http\Controllers\ApiController@displayNews');
+        return view('dashboard');
+});
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+///Route::get('/dashboard', [App\Http\Controllers\ApiController::class,'displayNews'])->name('dashboard');;
+///Route::post('sourceId',[App\Http\Controllers\ApiController::class,'displayNews'])->name('dashboard');;
+///Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+ ///   Route::get('/', 'App\Http\Controllers\ApiController@displayNews');
+  ///  Route::post('Api/{sourceId}', 'App\Http\Controllers\ApiController@displayNews');
+///})->name('dashboard');
+
+///Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+///    return view('dashboard'
+///);
+///})->name('dashboard');
