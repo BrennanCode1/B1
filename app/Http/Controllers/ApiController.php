@@ -13,7 +13,17 @@ class ApiController extends Controller
     {
         $response = $this->determineMethodHandler($request);
         $apiModel = new Api();
-        $response['news'] = $apiModel->fetchNewsFromSource($response['sourceId']);
+        $pageNumber = 1;
+        if (isset(($response['page'])))
+        {
+           
+            $pageNumber = $response['page'];
+            
+            
+        }
+       
+
+        $response['news'] = $apiModel->fetchNewsFromSource($response['sourceId'],$pageNumber);
         $response['newsSources'] = $this->fetchAllNewsSources();
         return view('dashboard', $response);
     }

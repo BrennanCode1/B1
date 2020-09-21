@@ -14,9 +14,9 @@ class Api extends Model
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function fetchNewsFromSource($newsSource)
+    public function fetchNewsFromSource($newsSource,$newsPage)
     {
-        $urlParams = 'top-headlines?pageSize=12&country=us' ;
+        $urlParams = 'top-headlines?pageSize=12&page='.$newsPage.'&country=us' ; 
         $response = (new Helper)->makeApiCalls($urlParams);
         return Arr::get($response,'articles');
     }

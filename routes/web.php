@@ -20,7 +20,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route:: get('ApiController/{page}','App\Http\Controllers\ApiController@displayNews');
 
 ///Route::get('/dashboard', [App\Http\Controllers\ApiController::class,'displayNews'])->name('dashboard');;
 ///Route::post('sourceId',[App\Http\Controllers\ApiController::class,'displayNews'])->name('dashboard');;
