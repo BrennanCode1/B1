@@ -10,9 +10,9 @@ change the database instructions to your own information and correct local host
 
 ## Usage
 open cmd
-type cd Laraval8auth
-run php artisan serv
-NOW ENJOY THE NEWS after creating an account and signing in.
+open the correct GIT of where you placed this folder
+run php artisan serv in GIT
+after creating an account and signing in you should be able to access the news.
 
 ## Made for Laravel interview project
 2020
