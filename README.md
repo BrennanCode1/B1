@@ -1,7 +1,7 @@
 # Laraval8Auth  
 Is a Laravel web app application using Jetstream.
 
-## Instalation
+## Installation
 Download code put in C:/ drive
 Install xamp
 run mysql and apache
