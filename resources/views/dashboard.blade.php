@@ -18,30 +18,18 @@
  <body>
  <div id="appendDivNews">
      <nav class="navbar fixed-top navbar-light bg-faded" style="background-color: #e3f2fd;">
-         <a class="navbar-brand" href="#">News Around the World</a>
+         <a class="navbar-brand" href="#">News by CNN</a>
      </nav>
      {{ csrf_field() }}
-     <section id="content" class="section-dropdown">
-         <p class="select-header"> Select a news source: </p>
-         <label class="select">
-             <select name="news_sources" id="news_sources">
-                 <option value="{{$sourceId}} : {{$sourceName}}">{{$sourceName}}</option>
-                 @foreach ($newsSources as $newsSource)
-                     <option value="{{$newsSource['id']}} : {{$newsSource['name'] }}">{{$newsSource['name']}}</option>
-                 @endforeach
-             </select>
- 
-         </label>
-         <object id="spinner" data="spinner.svg" type="image/svg+xml" hidden></object>
-     </section>
      <div id="news">
          <p> News Source : {{$sourceName}} </p>
  
  
-         <section class="news">
+         <section class="news">{{logger($news)}}
              @foreach($news as $selectedNews)
  
-                 <article>
+                 <article class="news-item">
+                    
                      <img src="{{$selectedNews['urlToImage']}}" alt=""/>
                      <div class="text">
                          <h1>{{$selectedNews['title']}}</h1>
@@ -60,7 +48,7 @@
  
                      </div>
                  </article>
-             @endforeach
+             @endforeach    
          </section>
  
  

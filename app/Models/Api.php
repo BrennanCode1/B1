@@ -16,7 +16,7 @@ class Api extends Model
      */
     public function fetchNewsFromSource($newsSource)
     {
-        $urlParams = 'top-headlines?sources=' . $newsSource;
+        $urlParams = 'top-headlines?pageSize=12&country=us' ;
         $response = (new Helper)->makeApiCalls($urlParams);
         return Arr::get($response,'articles');
     }

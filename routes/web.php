@@ -16,6 +16,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::post('Api/{sourceId}', 'App\Http\Controllers\ApiController@displayNews');
         return view('dashboard');
 });
+
 Route::get('/', function () {
     return view('welcome');
 });
