@@ -16,13 +16,27 @@
  
  </head>
  <body>
- <div id="appendDivNews">
-     <nav class="navbar fixed-top navbar-light bg-faded" style="background-color: #e3f2fd;">
-         <a class="navbar-brand" href="#">News by CNN</a>
-     </nav>
+ 
+ 
+ </body>
+ <!-- jQuery library -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+ 
+ <!-- Latest compiled JavaScript -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <!-- Scripts -->
+ <script src="{{ asset('js/site.js') }}"></script>
+ 
+ </html>
+ <x-app-layout>
+    <x-slot name="header">
+
+    </x-slot>
+
+    <div class="py-12">
+    <div id="appendDivNews">
      {{ csrf_field() }}
      <div id="news">
-         <p> News Source : {{$sourceName}} </p>
  
  
          <section class="news">{{logger($news)}}
@@ -54,14 +68,5 @@
  
      </div>
  </div>
- 
- </body>
- <!-- jQuery library -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
- 
- <!-- Latest compiled JavaScript -->
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <!-- Scripts -->
- <script src="{{ asset('js/site.js') }}"></script>
- 
- </html>
+    </div>
+</x-app-layout>
