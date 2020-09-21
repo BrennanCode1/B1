@@ -19,6 +19,8 @@ open the correct GIT of where you placed this folder
 
 run php artisan serv in GIT
 
+Go to correct local host website
+
 after creating an account and signing in you should be able to access the news by going to your correct local host site page with apache up.
 
 ## Made for Laravel interview project
