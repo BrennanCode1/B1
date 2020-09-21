@@ -4,7 +4,7 @@ Is a Laravel web app application using Jetstream.
 ## Installation
 Download code put in C:/ drive
 
-I used XAMP you can use whatevre you would like
+I used XAMP you can use whatever you would like
 
 run mysql and apache
 
